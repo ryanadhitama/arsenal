@@ -5,7 +5,6 @@ const MatchesTab = () => {
   const [matches, setMatches] = useState([]);
 
   useEffect(() => {
-    // Replace with actual API endpoint
     fetch("https://www.thesportsdb.com/api/v1/json/3/eventslast.php?id=133604")
       .then((response) => response.json())
       .then((data) => setMatches(data?.results));
@@ -47,7 +46,7 @@ const MatchesTab = () => {
               </div>
             </div>
 
-            <div className="text-center flex-shrink-0 px-4 md:px-10 border-l h-full flex justify-center flex-col md:text-base sm:text-sm text-xs">
+            <div className="text-center flex-shrink-0 px-4 md:px-0 border-l h-full flex justify-center flex-col md:text-base sm:text-sm text-xs md:min-w-[150px]">
               <div>{format(new Date(match?.strTimestamp), "EEE, dd MMM")}</div>
               <div>{format(new Date(match?.strTimestamp), "HH:mm")}</div>
             </div>

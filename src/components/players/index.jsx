@@ -4,7 +4,6 @@ const PlayersTab = () => {
   const [players, setPlayers] = useState([])
 
   useEffect(() => {
-    // Replace with actual API endpoint
     fetch(
       'https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?t=Arsenal',
     )
@@ -14,12 +13,15 @@ const PlayersTab = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">Players</h2>
-      <div className="grid grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-4">
         {players.map((player, index) => (
-          <div key={index} className="py-2">
-            <img src={player?.strThumb} className="pb-2 aspect-[1/1] object-cover" alt="" />
-            <p>{player.strPlayer}</p>
+          <div key={index} className='aspect-[1/1] relative'>
+            <img src={player?.strThumb} className="object-cover" alt="" />
+            <div className='bg-gradient-to-t from-black from-[1%] aspect-[1/1] w-full h-full top-0 left-0 absolute'></div>
+            <div className='absolute text-white bottom-5 left-6 z-10 text-lg font-medium'>
+              <p>{player.strPlayer}</p>
+              <p className='font-light text-base'>{player?.strPosition}</p>
+            </div>
           </div>
         ))}
       </div>
