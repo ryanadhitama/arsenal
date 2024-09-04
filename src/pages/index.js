@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="container mx-auto p-8">
       <TabMenu tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
-      <div className="mt-4">
+      <div className="mt-4 md:mt-8">
         {activeTab === 0 && <ProfileTab />}
         {activeTab === 1 && <PlayersTab />}
         {activeTab === 2 && <MatchesTab />}
